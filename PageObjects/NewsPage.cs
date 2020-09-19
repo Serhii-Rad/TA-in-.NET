@@ -7,7 +7,7 @@ using SeleniumExtras.PageObjects;
 using OpenQA.Selenium.Support.UI;
 using UnitTestProject2.PageObjects;
 
-namespace UnitTestProject2
+namespace TAdotNET
 {
     public class NewsPage : BasePage
     {
@@ -20,36 +20,27 @@ namespace UnitTestProject2
         [FindsBy(How = How.XPath, Using = "//nav[@role='navigation']//a[contains(text(), 'News')]")]
         public IWebElement headline;
         
-
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'gel-wrap gs-u-pt+')]//div[contains(@class, 'secondary-item')]//h3")]
         public IList<IWebElement> themesList;
 
         [FindsBy(How = How.XPath, Using = "//div[@class='gs-c-promo-body gel-1/2@xs gel-1/1@m gs-u-mt@m']//a/h3[1]")]
         public IWebElement firstArticle;
         
-
         [FindsBy(How = How.XPath, Using = "//input[@id='orb-search-q']")]
         public IWebElement searchField;
-        
-        
-        
-
+                
         [FindsBy(How = How.XPath, Using = "//a//span[@aria-hidden='false']")]
         public IWebElement searchedArticle;
         
         [FindsBy(How = How.XPath, Using = "/html/body/div[7]/header/div[2]/div[1]/div[1]/nav/ul/li[3]/a")]
         public IWebElement coronavirusTab;
 
-        
-
         [FindsBy(How = How.XPath, Using = "/html/body/div[7]/header/div[2]/div[2]/div[1]/nav/ul/li[2]/a")]
         public IWebElement coronavirusStoryTab;
         
-
         [FindsBy(How = How.XPath, Using = "/html/body/div[7]/div/div[2]/div/div[2]/div[2]/div[1]/div/div[2]/div/a")]
         public IWebElement howToShare;
         
-
         [FindsBy(How = How.XPath, Using = "//textarea[@placeholder]")]
         public IWebElement storyField;
         
@@ -65,13 +56,11 @@ namespace UnitTestProject2
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Location ']")]
         public IWebElement locationField;
         
-
         [FindsBy(How = How.XPath, Using = "//button[contains(text(), 'Submit')]")]
         public IWebElement submitButton;
 
         [FindsBy(How = How.XPath, Using = "/html/body/div[2]/div[6]/div/div[5]/div[1]/div[2]/div/div[1]/div[1]/div[2]/div[2]/div/div/div[1]/div[6]/label/input")]
         public IWebElement ageCheckBox;
-
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'input-error')]")]
         public IWebElement errorMessage;
@@ -81,6 +70,7 @@ namespace UnitTestProject2
 
         [FindsBy(How = How.XPath, Using = "//div[contains(text(), 'Email address is invalid')]")]
         public IWebElement errorMessageText;
+
 
 
         public void ClickSubmitButton()
@@ -150,7 +140,6 @@ namespace UnitTestProject2
         {
             locationField.SendKeys(location);
         }
-
         public void ClickOnAgeCheckBox()
         {
             ageCheckBox.Click();

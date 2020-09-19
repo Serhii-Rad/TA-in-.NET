@@ -9,6 +9,7 @@ using System.Linq;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.Extensions;
 using System.ComponentModel.DataAnnotations;
+using TAdotNET.PageObjects;
 
 namespace UnitTestProject2
 {
@@ -53,7 +54,11 @@ namespace UnitTestProject2
             laterButton.Click();
 
             var themesList = driver.FindElements(By.XPath("//div[contains(@class, 'gel-wrap gs-u-pt+')]//div[contains(@class, 'secondary-item')]//h3"));
-            List<string> themesNames = new List<string> { "Trump denies minimising Covid risk: I 'up-played' it", "The health risks of wildfire smoke", "The unexpected rise of Japan's new prime minister", "Barbados to remove Queen as head of state", "New Melania Trump statue replaces burnt original" };
+            List<string> themesNames = new List<string> { "Trump denies minimising Covid risk: I 'up-played' it",
+                "The health risks of wildfire smoke",
+                "The unexpected rise of Japan's new prime minister",
+                "Barbados to remove Queen as head of state",
+                "New Melania Trump statue replaces burnt original" };
             int i = 0;
 
 
@@ -275,8 +280,9 @@ namespace UnitTestProject2
 
             driver.Close();
         }
-        
-        
+
+
+       
 
 
     }

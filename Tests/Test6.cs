@@ -9,9 +9,9 @@ using System.Linq;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.Extensions;
 using System.ComponentModel.DataAnnotations;
+using TAdotNET.PageObjects;
 
-
-namespace UnitTestProject2.Tests
+namespace TAdotNET.Tests
 {
     [TestClass]
     public class Test6 : BaseTest
@@ -25,11 +25,10 @@ namespace UnitTestProject2.Tests
             GetNewsPage().ClickOnCoronavirusTab();
             GetNewsPage().ClickOnCoronaStory();
             GetNewsPage().ClickOnHowToShare();
-            GetNewsPage().InputStory("");
-            GetNewsPage().InputName("User name");
-            GetNewsPage().InputEmail("email@mail.com");
-            GetNewsPage().InputNumber("2281488");
-            GetNewsPage().InputLocation("Kyiv");
+            var dict = new Dictionary<string, string>()
+            { {"Name", "Vasya"}, {"Email address", "my@email.com"}, {"Contact number ", "2281488" }, {"Location ", "Kyiv" } };
+            Form form = new Form(driver);
+            form.FillForm(dict);
             GetNewsPage().ClickOnAgeCheckBox();
             GetNewsPage().ClickOnTermsCheckBox();
 

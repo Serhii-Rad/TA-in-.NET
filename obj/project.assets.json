@@ -7054,9 +7054,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\radch\\OneDrive\\EPAM\\TA Final Task\\dot NET TA\\UnitTestProject2.csproj",
-      "projectName": "UnitTestProject2",
-      "projectPath": "C:\\Users\\radch\\OneDrive\\EPAM\\TA Final Task\\dot NET TA\\UnitTestProject2.csproj",
+      "projectUniqueName": "C:\\Users\\radch\\OneDrive\\EPAM\\TA Final Task\\dot NET TA\\TAdotNET.csproj",
+      "projectName": "TAdotNET",
+      "projectPath": "C:\\Users\\radch\\OneDrive\\EPAM\\TA Final Task\\dot NET TA\\TAdotNET.csproj",
       "packagesPath": "C:\\Users\\radch\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\radch\\OneDrive\\EPAM\\TA Final Task\\dot NET TA\\obj\\",
       "projectStyle": "PackageReference",

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace UnitTestProject2.Tests
+namespace TAdotNET.Tests
 {
     [TestClass]
     public class Test5 : BaseTest

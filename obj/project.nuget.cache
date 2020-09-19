@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fn+MbQ/O/mrctCIps4Xp65BgaEDYIRkRUY4OVklWTcj8t0t3gj9eJjN4ogToQAzBpS8jzbe3ZqJiT3UZv0Y2Jw==",
+  "dgSpecHash": "aUmLXJceAlHiuLoGpp9QjV4LWVtmpa/7nsfL3A8o6HZTeJZXtkxwMFuFqIlvDvnF+a91a2LRLvNHW6+I7UcFQw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\radch\\OneDrive\\EPAM\\TA Final Task\\dot NET TA\\UnitTestProject2.csproj",
+  "projectFilePath": "C:\\Users\\radch\\OneDrive\\EPAM\\TA Final Task\\dot NET TA\\TAdotNET.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\radch\\.nuget\\packages\\bodi\\1.4.1\\bodi.1.4.1.nupkg.sha512",
     "C:\\Users\\radch\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",

@@ -3,11 +3,11 @@ using OpenQA.Selenium.Chrome;
 
 using OpenQA.Selenium.Support.UI;
 using System;
-using UnitTestProject2.PageObjects;
+using TAdotNET.PageObjects;
 using SeleniumExtras.PageObjects;
 
 
-namespace UnitTestProject2
+namespace TAdotNET
 {
     public class HomePage : BasePage
     {

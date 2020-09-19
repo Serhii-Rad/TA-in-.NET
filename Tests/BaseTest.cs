@@ -9,7 +9,7 @@ using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
 using UnitTestProject2.PageObjects;
 
-namespace UnitTestProject2.Tests
+namespace TAdotNET.Tests
 {
     [TestClass]
     public class BaseTest
@@ -53,7 +53,7 @@ namespace UnitTestProject2.Tests
         public void WaitVisibilityOfElement(long timeToWait, IWebElement element)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeToWait));
-            wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy((By)element));
+            wait.Until(c => c.FindElement((By)element));
         }
         
         

@@ -5,11 +5,11 @@ using System.Text;
 using SeleniumExtras.PageObjects;
 
 
-namespace UnitTestProject2.PageObjects
+namespace TAdotNET.PageObjects
 {
     public class BasePage
     {
-        IWebDriver driver;
+        public IWebDriver driver;
 
         public BasePage(IWebDriver driver)
         {
