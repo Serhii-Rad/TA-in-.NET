@@ -7,7 +7,8 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
-using UnitTestProject2.PageObjects;
+using TAdotNET.PageObjects;
+
 
 namespace TAdotNET.Tests
 {

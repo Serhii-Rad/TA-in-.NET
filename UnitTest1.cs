@@ -10,8 +10,9 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.Extensions;
 using System.ComponentModel.DataAnnotations;
 using TAdotNET.PageObjects;
+using TAdotNET.Business_Logic_Layer;
 
-namespace UnitTestProject2
+namespace TAdotNET
 {
     [TestClass]
     public class UnitTest1
@@ -32,9 +33,9 @@ namespace UnitTestProject2
             IWebElement laterButton = driver.FindElement(By.XPath("//div[@class='sign_in-container']//button[@class='sign_in-exit']"));
             laterButton.Click();
 
-            IWebElement headline = driver.FindElement(By.XPath("//*[@id='u5980633282889429']/div/div/div/div[1]/div/div/div[1]/div/a/h3"));
+            IWebElement headline = driver.FindElement(By.XPath("//*[@id='u9975760081351847']/div/div/div/div[1]/div/div/div[1]/div/a/h3"));
             string elementText = headline.Text; // Assigns the text in the element (which is usually what you see on this element in your browser) to variable elementText
-            Assert.AreEqual("India's coronavirus cases surge past five million", elementText);  // Checks that string “text” is equal to variable elementText, and throws exception if not. Use for checks that must succeed for the test to pass (i.e. the checks that are the purpose of the test).
+            Assert.AreEqual("Trump says Supreme Court nominee will be a woman", elementText);  // Checks that string “text” is equal to variable elementText, and throws exception if not. Use for checks that must succeed for the test to pass (i.e. the checks that are the purpose of the test).
 
             driver.Close();
         }
@@ -121,7 +122,7 @@ namespace UnitTestProject2
             IWebElement laterButton = driver.FindElement(By.XPath("//div[@class='sign_in-container']//button[@class='sign_in-exit']"));
             laterButton.Click();
 
-            IWebElement coronavirusTab = driver.FindElement(By.XPath("/html/body/div[7]/header/div[2]/div[1]/div[1]/nav/ul/li[3]/a"));
+            IWebElement coronavirusTab = driver.FindElement(By.XPath("//ul[contains(@class, 'wide-sections')]/li/a[contains(@href, 'coronavirus')]"));
             coronavirusTab.Click();
 
 
@@ -282,7 +283,7 @@ namespace UnitTestProject2
         }
 
 
-       
+        
 
 
     }

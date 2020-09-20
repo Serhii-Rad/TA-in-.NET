@@ -2,31 +2,32 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TAdotNET.PageObjects;
 
 namespace TAdotNET.Tests
 {
     [TestClass]
-    public class Test5 : BaseTest
+    public class CheckSendingStoryWithoutTermsCheckBox : BaseTest
     {
         [TestMethod]
-        
-        //[DataRow(15)]
-        //[DataRow(35)]
         public void TestMethod5()
         {
-            GetHomePage().ClickOnNewsButton();
+
+            GetHomePage().GoTo("News");
             GetHomePage().ClickOnLaterButton();
-            GetNewsPage().ClickOnCoronavirusTab();
+
+            GetNewsPage().GoTo(ThemesOfNews.Coronavirus);
             GetNewsPage().ClickOnCoronaStory();
             GetNewsPage().ClickOnHowToShare();
             GetNewsPage().InputStory("Some story");
-            GetNewsPage().InputName("User name");
-            GetNewsPage().InputEmail("email@mail.com");
-            GetNewsPage().InputNumber("2281488");
-            GetNewsPage().InputLocation("Kyiv");
+            
+            var dict = new Dictionary<string, string>()
+            { {"Name", "User name"}, {"Email address", "email@mail.com"}, {"Contact number ", "2281488" }, {"Location ", "Kyiv" } };
+            Form form = new Form(driver);
+            form.FillForm(dict);
+
             GetNewsPage().ClickOnAgeCheckBox();
             
-
             GetNewsPage().ClickSubmitButton();
 
             Assert.IsTrue(GetNewsPage().GetErrorMessage().Displayed, "There is no Error message");

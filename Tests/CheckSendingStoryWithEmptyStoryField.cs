@@ -14,24 +14,27 @@ using TAdotNET.PageObjects;
 namespace TAdotNET.Tests
 {
     [TestClass]
-    public class Test6 : BaseTest
+    public class CheckSendingStoryWithEmptyStoryField : BaseTest
     {
 
         [TestMethod]
         public void TestMethod6()
         {
-            GetHomePage().ClickOnNewsButton();
+
+            GetHomePage().GoTo("News");
             GetHomePage().ClickOnLaterButton();
-            GetNewsPage().ClickOnCoronavirusTab();
+            
+            GetNewsPage().GoTo(ThemesOfNews.Coronavirus);
             GetNewsPage().ClickOnCoronaStory();
             GetNewsPage().ClickOnHowToShare();
+
             var dict = new Dictionary<string, string>()
-            { {"Name", "Vasya"}, {"Email address", "my@email.com"}, {"Contact number ", "2281488" }, {"Location ", "Kyiv" } };
+            { {"Name", "User name"}, {"Email address", "email@mail.com"}, {"Contact number ", "2281488" }, {"Location ", "Kyiv" } };
             Form form = new Form(driver);
             form.FillForm(dict);
+
             GetNewsPage().ClickOnAgeCheckBox();
             GetNewsPage().ClickOnTermsCheckBox();
-
 
             GetNewsPage().ClickSubmitButton();
 

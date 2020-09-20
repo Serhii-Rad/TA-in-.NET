@@ -14,11 +14,12 @@ namespace TAdotNET.Tests
         [TestMethod]
         public void TestMethod3()
         {
-            GetHomePage().ClickOnNewsButton();
+
+            GetHomePage().GoTo("News");
             GetHomePage().ClickOnLaterButton();
             string firstArticleName = GetNewsPage().GetFirstArticleName();
             GetNewsPage().ClickOnSearchField();
-            GetNewsPage().EnterFirstArticleName();
+            GetNewsPage().InputFirstArticleName();
             GetNewsPage().SearchFieldEnter();
 
             Assert.AreEqual(firstArticleName, GetSearchPage().SearchedArticleName());

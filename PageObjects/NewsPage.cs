@@ -5,10 +5,29 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using SeleniumExtras.PageObjects;
 using OpenQA.Selenium.Support.UI;
-using UnitTestProject2.PageObjects;
+
+using TAdotNET.PageObjects;
 
 namespace TAdotNET
 {
+    public enum ThemesOfNews
+    {
+        Home,
+        Election,
+        Coronavirus,
+        Video,
+        World,
+        UK,
+        Business,
+        Tech,
+        Science,
+        Stories,
+        Entertaiment,
+        Health,
+        TV,
+        Pictures,
+        More
+    }
     public class NewsPage : BasePage
     {
         public NewsPage(IWebDriver driver) : base(driver)
@@ -17,7 +36,7 @@ namespace TAdotNET
         }
 
 
-        [FindsBy(How = How.XPath, Using = "//nav[@role='navigation']//a[contains(text(), 'News')]")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='u9975760081351847']/div/div/div/div[1]/div/div/div[1]/div/a/h3")]
         public IWebElement headline;
         
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'gel-wrap gs-u-pt+')]//div[contains(@class, 'secondary-item')]//h3")]
@@ -96,7 +115,11 @@ namespace TAdotNET
         {
             searchField.Click();
         }
-        public void EnterFirstArticleName()
+        public void InputInSearchField(string text)
+        {
+            searchField.SendKeys(text);
+        }
+        public void InputFirstArticleName()
         {
             searchField.SendKeys(firstArticle.Text);
         }
@@ -156,5 +179,12 @@ namespace TAdotNET
         {
             return errorMessageText.Text;
         }
+        private IWebElement GetThemeOfNewsLink(string theme)
+        {
+            return driver.FindElement(By.XPath($"//div[contains(@class, 'news-wide-navigation')]//a[contains(@href, '{theme}')]"));
+        }
+
+        public void GoTo(ThemesOfNews theme) => GetThemeOfNewsLink(theme.ToString().ToLower()).Click();
+        
     }
 }

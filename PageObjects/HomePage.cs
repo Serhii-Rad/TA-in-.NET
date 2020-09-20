@@ -9,9 +9,21 @@ using SeleniumExtras.PageObjects;
 
 namespace TAdotNET
 {
+    public enum Tabs
+    {
+        News,
+        Sport,
+        Reel,
+        Workife,
+        Travel,
+        Future,
+        Culture,
+        More
+    }
     public class HomePage : BasePage
     {
         
+
         public HomePage(IWebDriver driver) : base(driver)
         {
             
@@ -34,7 +46,12 @@ namespace TAdotNET
             laterButton.Click();
         }
 
-        
+        private IWebElement GetTabLink(string tab)
+        {
+            return driver.FindElement(By.XPath($"//div[@id='orb-nav-links']//li[contains(@class, '{tab}')]/a"));
+        }
+
+        public void GoTo(string tab) => GetTabLink(tab.ToString().ToLower()).Click();
 
 
 

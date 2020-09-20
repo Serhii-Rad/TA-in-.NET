@@ -9,13 +9,14 @@ using OpenQA.Selenium.Chrome;
 namespace TAdotNET.Tests
 {
     [TestClass]
-    public class Test2 : BaseTest
+    public class CheckNamesOfFirstFiveArticles : BaseTest
     {
         
         [TestMethod]
         public void TestMethod2()
         {
-            GetHomePage().ClickOnNewsButton();
+
+            GetHomePage().GoTo("News");
             GetHomePage().ClickOnLaterButton();
 
             List<string> themesNames = new List<string> { "UK teachers 'must get priority access to tests",
