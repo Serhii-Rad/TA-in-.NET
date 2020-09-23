@@ -13,7 +13,7 @@ using TAdotNET.PageObjects;
 namespace TAdotNET.Tests
 {
     [TestClass]
-    public class BaseTest
+    public abstract class BaseTest
     {
         public IWebDriver driver;
         private static readonly string URL = "https://www.bbc.com";
@@ -51,7 +51,7 @@ namespace TAdotNET.Tests
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
        
-        public void WaitVisibilityOfElement(long timeToWait, By locator)
+        public void WaitVisibilityOfElement(int timeToWait, By locator)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeToWait));
             wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(locator));

@@ -11,9 +11,9 @@ using TAdotNET.Tests;
 namespace TAdotNET.Business_Logic_Layer
 {
     
-    public class BLL : BaseTest
+    public class BLL
     {
-        
+        private IWebDriver driver = new ChromeDriver();
         public void OpenSelectedTab(string tabName)
         {
             new HomePage(driver).GoTo(tabName);
@@ -44,10 +44,10 @@ namespace TAdotNET.Business_Logic_Layer
             Form form = new Form(driver);
             form.FillForm(dict);
 
-            GetNewsPage().ClickOnAgeCheckBox();
-            GetNewsPage().ClickOnTermsCheckBox();
+            new NewsPage(driver).ClickOnAgeCheckBox();
+            new NewsPage(driver).ClickOnTermsCheckBox();
 
-            GetNewsPage().ClickSubmitButton();
+            new NewsPage(driver).ClickSubmitButton();
         }
     }
 }

@@ -31,7 +31,7 @@ namespace TAdotNET
 
 
         [FindsBy(How = How.XPath, Using = "//nav[@role='navigation']//a[contains(text(), 'News')]")]
-        public IWebElement newsButton;
+        private IWebElement newsButton;
         
 
         [FindsBy(How = How.XPath, Using = "//div[@class='sign_in-container']//button[@class='sign_in-exit']")]
@@ -46,12 +46,12 @@ namespace TAdotNET
             laterButton.Click();
         }
 
-        private IWebElement GetTabLink(string tab)
+        private IWebElement GetTabLink(Tabs tab)
         {
             return driver.FindElement(By.XPath($"//div[@id='orb-nav-links']//li[contains(@class, '{tab}')]/a"));
         }
 
-        public void GoTo(string tab) => GetTabLink(tab.ToString().ToLower()).Click();
+        public void GoTo(Tabs tab) => GetTabLink(tab.ToString().ToLower()).Click();
 
 
 
