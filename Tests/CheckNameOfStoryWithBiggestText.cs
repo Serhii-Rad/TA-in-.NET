@@ -20,7 +20,7 @@ namespace TAdotNET.Tests
             GetHomePage().ClickOnLaterButton();
             
 
-            Assert.AreEqual("Trump says Supreme Court nominee will be a woman", GetNewsPage().GetHeadlineText());
+            Assert.AreEqual("Poisoned Navalny discharged from Berlin hospital", GetNewsPage().GetHeadlineText());
             
 
         }

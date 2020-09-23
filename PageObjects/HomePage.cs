@@ -31,11 +31,11 @@ namespace TAdotNET
 
 
         [FindsBy(How = How.XPath, Using = "//nav[@role='navigation']//a[contains(text(), 'News')]")]
-        private IWebElement newsButton;
+        public IWebElement newsButton;
         
 
         [FindsBy(How = How.XPath, Using = "//div[@class='sign_in-container']//button[@class='sign_in-exit']")]
-        private IWebElement laterButton;
+        public IWebElement laterButton;
         
         public void ClickOnNewsButton()
         {

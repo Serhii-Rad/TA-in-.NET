@@ -10,6 +10,7 @@ using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.Extensions;
 using System.ComponentModel.DataAnnotations;
 using TAdotNET.PageObjects;
+using TAdotNET.Elements;
 
 namespace TAdotNET.Tests
 {

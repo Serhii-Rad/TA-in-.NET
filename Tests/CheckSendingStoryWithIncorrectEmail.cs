@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TAdotNET.Elements;
 using TAdotNET.PageObjects;
 
 namespace TAdotNET.Tests

@@ -36,7 +36,7 @@ namespace TAdotNET
         }
 
 
-        [FindsBy(How = How.XPath, Using = "//*[@id='u9975760081351847']/div/div/div/div[1]/div/div/div[1]/div/a/h3")]
+        [FindsBy(How = How.XPath, Using = "//*[@id]/div/div/div/div[1]/div/div/div[1]/div/a/h3")]
         public IWebElement headline;
         
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'gel-wrap gs-u-pt+')]//div[contains(@class, 'secondary-item')]//h3")]

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using UnitTestProject2.PageObjects;
+using TAdotNET.PageObjects;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using OpenQA.Selenium.Chrome;
 
-namespace TAdotNET.PageObjects
+namespace TAdotNET.Elements
 {
     public class Form : BasePage
     {

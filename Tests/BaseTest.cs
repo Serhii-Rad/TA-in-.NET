@@ -51,10 +51,11 @@ namespace TAdotNET.Tests
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
        
-        public void WaitVisibilityOfElement(long timeToWait, IWebElement element)
+        public void WaitVisibilityOfElement(long timeToWait, By locator)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeToWait));
-            wait.Until(c => c.FindElement((By)element));
+            wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(locator));
+            
         }
         
         

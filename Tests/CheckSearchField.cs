@@ -9,7 +9,7 @@ using System.Text;
 namespace TAdotNET.Tests
 {
     [TestClass]
-    public class Test3 : BaseTest
+    public class CheckSearchField : BaseTest
     {
         [TestMethod]
         public void TestMethod3()
