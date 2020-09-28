@@ -23,10 +23,10 @@ namespace TAdotNET.Tests
             return driver;
         }
 
-        public BasePage GetBasePage()
-        {
-            return new BasePage(GetDriver());
-        }
+        //public BasePage GetBasePage()
+        //{
+        //    return new BasePage(GetDriver());
+        //}
 
         public HomePage GetHomePage()
         {
@@ -67,7 +67,7 @@ namespace TAdotNET.Tests
             
             if (driver != null)
             {
-                driver.Quit();
+                driver.Close();
             }
         }
 

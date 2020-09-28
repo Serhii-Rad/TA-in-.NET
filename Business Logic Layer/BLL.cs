@@ -13,41 +13,58 @@ namespace TAdotNET.Business_Logic_Layer
     
     public class BLL
     {
-        private IWebDriver driver = new ChromeDriver();
+        public IWebDriver driver;
+
+        //public static T GetPages<T>() where T : new()
+        //{
+
+        //    var page = new T();
+
+        //    return page;
+        //}
         public void OpenSelectedTab(string tabName)
         {
-            new HomePage(driver).GoTo(tabName);
-            new HomePage(driver).ClickOnLaterButton();
+            var homePage = new HomePage(driver);
+            homePage.GoTo(tabName);
+            homePage.ClickOnLaterButton();
         }
-
+        
         public void GetSearchedInformation(string text)
         {
-            new HomePage(driver).GoTo("News");
-            new HomePage(driver).ClickOnLaterButton();
-            new NewsPage(driver).ClickOnSearchField();
-            new NewsPage(driver).InputInSearchField(text);
-            new NewsPage(driver).SearchFieldEnter();
+            var homePage = new HomePage(driver);
+            var newsPage = new NewsPage(driver);
+            homePage.GoTo("News");
+            homePage.ClickOnLaterButton();
+            newsPage.ClickOnSearchField();
+            newsPage.InputInSearchField(text);
+            newsPage.SearchFieldEnter();
         }
 
+        public string GetTextFromElement(IWebElement element)
+        {
+            return element.Text;
+        }
         public void SendYourCOVIDStory(string story, string name, string email, string number, string location)
         {
-            new HomePage(driver).GoTo("News");
-            new HomePage(driver).ClickOnLaterButton();
+            var homePage = new HomePage(driver);
+            var newsPage = new NewsPage(driver);
+            homePage.GoTo("News");
+            homePage.ClickOnLaterButton();
 
-            new NewsPage(driver).GoTo(ThemesOfNews.Coronavirus);
-            new NewsPage(driver).ClickOnCoronaStory();
-            new NewsPage(driver).ClickOnHowToShare();
-            new NewsPage(driver).InputStory(story);
+            newsPage.GoTo(ThemesOfNews.Coronavirus);
+            newsPage.ClickOnCoronaStory();
+            newsPage.ClickOnHowToShare();
+            newsPage.InputStory(story);
 
             var dict = new Dictionary<string, string>()
             { {"Name", name}, {"Email address", email}, {"Contact number ", number }, {"Location ", location } };
             Form form = new Form(driver);
             form.FillForm(dict);
 
-            new NewsPage(driver).ClickOnAgeCheckBox();
-            new NewsPage(driver).ClickOnTermsCheckBox();
+            newsPage.ClickOnAgeCheckBox();
+            newsPage.ClickOnTermsCheckBox();
 
-            new NewsPage(driver).ClickSubmitButton();
+            newsPage.ClickSubmitButton();
         }
     }
 }

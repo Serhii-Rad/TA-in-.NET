@@ -7,7 +7,7 @@ using SeleniumExtras.PageObjects;
 
 namespace TAdotNET.PageObjects
 {
-    public class BasePage
+    public abstract class BasePage
     {
         public IWebDriver driver;
 

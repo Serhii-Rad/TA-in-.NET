@@ -46,12 +46,12 @@ namespace TAdotNET
             laterButton.Click();
         }
 
-        private IWebElement GetTabLink(Tabs tab)
+        private IWebElement GetTabLink(string tab)
         {
             return driver.FindElement(By.XPath($"//div[@id='orb-nav-links']//li[contains(@class, '{tab}')]/a"));
         }
 
-        public void GoTo(Tabs tab) => GetTabLink(tab.ToString().ToLower()).Click();
+        public void GoTo(string tab) => GetTabLink(tab.ToString().ToLower()).Click();
 
 
 
