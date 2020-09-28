@@ -48,34 +48,3 @@ namespace TAdotNET
     }
 }
 
-//namespace GoogleSearch.GoogleSearch
-//{
-//    [Binding]
-//    public class GoogleKeyWordSearchSteps
-//    {
-//        IWebDriver driver = new ChromeDriver();
-//        [Given(@"I have entered the Google Home page")]
-//        public void GivenIHaveEnteredTheGoogleHomePage()
-//        {
-//            driver.Navigate().GoToUrl("https://www.google.co.nz");
-//        }
-
-//        [Given(@"I have entered spec flow into google search bar")]
-//        public void GivenIHaveEnteredSpecFlowIntoGoogleSearchBar()
-//        {
-//            driver.FindElement(By.XPath("/html/body/div/div[3]/form/div[2]/div[2]/div[1]/div[1]/div[3]/div/div[3]/div/input[1]")).SendKeys("Spec Flow");
-//        }
-
-//        [When(@"I press search button")]
-//        public void WhenIPressSearchButton()
-//        {
-//            driver.FindElement(By.XPath("/html/body/div/div[3]/form/div[2]/div[3]/center/input[1]")).Click();
-//        }
-
-//        [Then(@"the result should be a new pages with results for spec flow")]
-//        public void ThenTheResultShouldBeANewPagesWithResultsForSpecFlow()
-//        {
-//            Assert.AreEqual("Google", driver.Title);
-//        }
-//    }
-//}
